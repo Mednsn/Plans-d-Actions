@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <meta charset="UTF-8">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1" type="module"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <section id="dialog-profile"
+        class="flex bg-black/45 backdrop-blur-sm h-screen  w-full p-10 items-center justify-center ">
+
+        <div class="flex gap-6 flex-col p-6 w-140  border rounded-md bg-white">
+            <div class="flex justify-center items-center h-30 bg-blue-500 rounded-md w-full">
+                <h2 class="font-extrabold text-2xl text-white">Gestionnaire de Tâches</h2>
+            </div>
+
+            <form name="ajouter" class="flex justify-between gap-2">
+                <input type="text" id="name" name="name" placeholder="Nom de tach" class="border p-2 w-full rounded-md" required>
+                <input type="text" id="description" name="description" placeholder="ajouter une nouvelle tache ..." class="border p-2 w-full rounded-md" required>
+
+                <button class=" bg-blue-500 hover:bg-blue-700 text-white rounded-md w-60 font-serif">+ Ajouter</button>
+            </form>
+            <div class="flex flex-grow gap-2">
+                <div id="toutes"
+                    class=" bg-gray-300 rounded-md h-10 w-fit px-2 flex justify-center items-center font-serif  hover:bg-gray-400">
+                    Toutes</div>
+                <div id="nonTreminer"
+                    class=" bg-gray-300 rounded-md h-10 w-fit px-2 flex justify-center items-center font-serif  hover:bg-gray-400">
+                    Non terminées</div>
+                <div id="terminer"
+                    class=" bg-gray-300 rounded-md h-10 w-fit px-2 flex justify-center items-center font-serif  hover:bg-gray-400">
+                    Terminées</div>
+
+            </div>
+            <div id="zoneAjouter" class="grid gap-2">
+               
+            </div>
+
+        </div>
+    </section>
+    <script src="main.js"></script>
+</body>
+
+</html>
