@@ -32,7 +32,7 @@
     <section id="joueur-football" class="bg-white grid mt-6 p-2 gap-4 rounded-md mx-4">
         <div class="flex justify-between">
             <h2 class="text-blue-700">Gestion des Joueurs</h2>
-            <button id="ajouter-joueursTabl"  command="show-modal" commandfor="dialog"
+            <button id="ajouter-joueursTabl" command="show-modal" commandfor="dialog"
                 class="text-white bg-blue-500 p-2 rounded-md hover:shadow-xl/40 hover:bg-green-500">+ Ajouter un
                 joueur</button>
         </div>
@@ -46,7 +46,7 @@
                 <option value="Attaquant">Attaquant</option>
             </select>
         </form>
-        <table  class="border">
+        <table class="border">
             <thead>
                 <tr class="bg-blue-100 h-10">
                     <th class="border">N°</th>
@@ -58,7 +58,7 @@
                 </tr>
             </thead>
             <tbody id="players-table">
-                
+
             </tbody>
 
         </table>
@@ -118,7 +118,7 @@
                                         class="bg-gray-200 h-7 border-2 rounded-sm " required>
                                 </div>
                         </div>
-                        <button type="submit" id="btnAJOUTER" 
+                        <button type="submit" id="btnAJOUTER"
                             class="rounded-md mt-1 bg-green-600 p-1 w-full text-white">Ajouter</button>
                         </form>
                         <button id="annuler-formulaire" command="close" commandfor="dialog"
@@ -146,19 +146,19 @@
                     </div>
                     <div class="flex justify-between">
                         <h2 class="text-blue-700">2499 €</h2>
-                        <button class="bg-blue-600 rounded-md h-8 px-2 text-white"><i
+                        <button onclick="ajouterAcaisse(0)" class="bg-blue-600 rounded-md h-8 px-2 text-white"><i
                                 class="fa-solid fa-cart-shopping fa-lg" style="color: #fefefe;"></i> Ajouter</button>
                     </div>
                 </div>
                 <div class="p-4 grid gap-2 border rounded-md">
                     <img src="images/tablt.jpg" alt="" class="h-4hover:shadow-xl/40 0 rounded-md w-full ">
                     <div>
-                        <h2>MacBook Pro 16"</h2>
+                        <h2>Iphon Pro 16</h2>
                         <span class="text-slate-400">Ordinateur portable haute performance</span>
                     </div>
                     <div class="flex justify-between">
                         <h2 class="text-blue-700">2499 €</h2>
-                        <button class="bg-blue-600 rounded-md h-8 px-2 text-white"><i
+                        <button onclick="ajouterAcaisse(1)" class="bg-blue-600 rounded-md h-8 px-2 text-white"><i
                                 class="fa-solid fa-cart-shopping fa-lg" style="color: #fefefe;"></i> Ajouter</button>
                     </div>
 
@@ -166,12 +166,12 @@
                 <div class="p-4 grid gap-2 border rounded-md">
                     <img src="images/kyes.jpg" alt="" class="h-40hover:shadow-xl/40  rounded-md w-full ">
                     <div>
-                        <h2>MacBook Pro 16"</h2>
+                        <h2>clavier Pro"</h2>
                         <span class="text-slate-400">Ordinateur portable haute performance</span>
                     </div>
                     <div class="flex justify-between">
                         <h2 class="text-blue-700">2499 €</h2>
-                        <button class="bg-blue-600 rounded-md h-8 px-2 text-white"><i
+                        <button onclick="ajouterAcaisse(2)" class="bg-blue-600 rounded-md h-8 px-2 text-white"><i
                                 class="fa-solid fa-cart-shopping fa-lg" style="color: #fefefe;"></i> Ajouter</button>
                     </div>
 
@@ -179,30 +179,37 @@
                 <div class="p-4 grid gap-2 border rounded-md">
                     <img src="images/airpods.jpeg" alt="" class="hover:shadow-xl/40 h-40 rounded-md w-full ">
                     <div>
-                        <h2>MacBook Pro 16"</h2>
+                        <h2>AIRpods pro"</h2>
                         <span class="text-slate-400">Ordinateur portable haute performance</span>
                     </div>
                     <div class="flex justify-between">
                         <h2 class="text-blue-700">2499 €</h2>
-                        <button class="bg-blue-600 rounded-md h-8 px-2 text-white"><i
+                        <button onclick="ajouterAcaisse(3)" class="bg-blue-600 rounded-md h-8 px-2 text-white"><i
                                 class="fa-solid fa-cart-shopping fa-lg" style="color: #fefefe;"></i> Ajouter</button>
                     </div>
 
                 </div>
             </div>
         </div>
-        <div class="border rounded-md p-4 sticky top-[20px] h-60">
+        <div class="border rounded-md p-4 sticky top-[20px] h-130 overflow-auto">
             <div class="flex items-center "><i class="fa-solid fa-cart-shopping fa-lg" style="color: #175fcb;"></i>
                 <h2 class="text-blue-700 font-serif"> Mon Panier :</h2>
             </div>
-            <div class="grid gap-2">
-                <div class="grid justify-center items-center h-50">
-                    <div class="grid items-center justify-center">
-                        <i class="fa-solid fa-cart-shopping fa-3x" style="color: #b2b5b9;"></i>
-                        <p>Votre panier est vide</p>
+            <div class="grid">
+                <div id="espace-bayed" class="grid mt-4 gap-2">
+                    
+                </div>
+                <div id="calculeSUM" class="hidden mt-2 rounded-md bg-black/10 h-20 justify-evenly gap-3 items-center">
+                    <button id="seeTotal" class="bg-orange-400 rounded-md hover:font-black text-white font-serif py-3 px-2">See Total</button>
+                    <div class="flex items-center gap-3">
+                        <h2 class="text-green-500 font-black text-xl">Total:</h2>
+                        <h3 id="prixtotalproduits" class="font-bold text-red-700 ">----</h3>
                     </div>
+                    <button id="baynow" class="bg-green-600 rounded-md hover:font-black text-white font-serif py-3 px-2">Bay Now</button>
 
                 </div>
+                
+
             </div>
         </div>
 
