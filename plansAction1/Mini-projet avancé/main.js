@@ -293,20 +293,21 @@ function affichagePanierAcheter(list) {
 
 document.getElementById("seeTotal").addEventListener("click", function () {
     let listPanier = JSON.parse(localStorage.getItem('infosPanier'));
-    console.log("!ùùùùùùùùùùùù************");
+ 
     let inputsQUantite = document.querySelectorAll(".numberPRD");
     inputsQUantite.forEach((element, index) => {
         listPanier[index].prix *= element.value;
     })
-console.log("testabaah");
-let somePrix = listPanier.reduce((A, Z) => {
-    return A + Z.prix;
-}, 0)
-document.getElementById("prixtotalproduits").textContent=somePrix+"£";
+    console.log("testabaah");
+    let somePrix = listPanier.reduce((A, Z) => {
+        return A + Z.prix;
+    }, 0)
+    document.getElementById("prixtotalproduits").textContent = somePrix + "£";
 })
-document.getElementById("baynow").addEventListener("click",function(){
+
+document.getElementById("baynow").addEventListener("click", function () {
     localStorage.removeItem('infosPanier');
     checkLocaleStoregePanier()
-        document.getElementById("calculeSUM").classList.replace("flex", "hidden")
-
+    document.getElementById("calculeSUM").classList.replace("flex", "hidden")
+ a = 0, b = 0, c = 0, d = 0;
 })
